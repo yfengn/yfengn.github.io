@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="baidu-site-verification" content="code-MGPhAMzhIY"><meta name="description" content="在平时的开发中总结了一些比较常用的配置信息，分享给有需要的小伙伴，同时也是给自己的一份webpack配置笔记。                     大体配置       123456789101112131415161718192021222324252627282930313233343536373839404142434445&#x2F;** * webpack.config.js webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack配置">
+<meta property="og:url" content="http://www.baixiu.online/2021/11/06/webpack%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="陈积锋的博客">
+<meta property="og:description" content="在平时的开发中总结了一些比较常用的配置信息，分享给有需要的小伙伴，同时也是给自己的一份webpack配置笔记。                     大体配置       123456789101112131415161718192021222324252627282930313233343536373839404142434445&#x2F;** * webpack.config.js webpack">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-06T13:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-06T13:00:00.000Z">
+<meta property="article:author" content="Ji Feng">
+<meta name="twitter:card" content="summary"><title>webpack配置 | 陈积锋的博客</title><link ref="canonical" href="http://www.baixiu.online/2021/11/06/webpack%E9%85%8D%E7%BD%AE/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: true,
+  pjax: {"avoidBanner":true},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">陈积锋的博客</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">webpack配置</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><p>在平时的开发中总结了一些比较常用的配置信息，分享给有需要的小伙伴，同时也是给自己的一份webpack配置笔记。</p>
+
+        <h3 id="大体配置"   >
+          <a href="#大体配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#大体配置" class="headerlink" title="大体配置"></a>大体配置</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * webpack.config.js webpack 配置文件</span><br><span class="line"> * 作用：指示webpack 干哪些活</span><br><span class="line"> * 所有构建工具都是基于node.js平台运行~模块化采用common.js</span><br><span class="line"> */</span><br><span class="line">// resolve用来拼接绝对路径的方法</span><br><span class="line">const &#123;resolve&#125; = require(&#x27;path&#x27;);</span><br><span class="line">const HtmlWebpackPlugin = require(&#x27;html-webpack-plugin&#x27;);</span><br><span class="line"></span><br><span class="line">module.expotts = &#123;</span><br><span class="line">    entry: &#x27;./src/index.js&#x27;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#x27;js/built.js&#x27;,</span><br><span class="line">        path: resolve(__dirname, &#x27;buile&#x27;)</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: /.css$/,</span><br><span class="line">                use: [</span><br><span class="line">                    &#x27;style-loader&#x27;,</span><br><span class="line">                    &#x27;css-loader&#x27;</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">                     &#123;</span><br><span class="line">                test: /.less/,</span><br><span class="line">                use: [</span><br><span class="line">                    &#x27;style-loader&#x27;,</span><br><span class="line">                    &#x27;css-loader&#x27;,</span><br><span class="line">                    &#x27;less-loader&#x27;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        </span><br><span class="line">    ],</span><br><span class="line">    mode: &#x27;development&#x27;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: resolve(__dirname, &#x27;./build&#x27;),</span><br><span class="line">        compress: true,</span><br><span class="line">        port: 8088,</span><br><span class="line">        open: true</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="entry-入口"   >
+          <a href="#entry-入口" class="heading-link"><i class="fas fa-link"></i></a><a href="#entry-入口" class="headerlink" title="entry 入口"></a>entry 入口</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">  entry: 入口起点</span><br><span class="line">    1. string --&gt; &#x27;./src/index.js&#x27;</span><br><span class="line">      单入口</span><br><span class="line">      打包形成一个chunk。 输出一个bundle文件。</span><br><span class="line">      此时chunk的名称默认是 main</span><br><span class="line">    2. array  --&gt; [&#x27;./src/index.js&#x27;, &#x27;./src/add.js&#x27;]</span><br><span class="line">      多入口</span><br><span class="line">      所有入口文件最终只会形成一个chunk, 输出出去只有一个bundle文件。</span><br><span class="line">        --&gt; 只有在HMR功能中让html热更新生效~</span><br><span class="line">    3. object</span><br><span class="line">      多入口</span><br><span class="line">      有几个入口文件就形成几个chunk，输出几个bundle文件</span><br><span class="line">      此时chunk的名称是 key</span><br><span class="line"></span><br><span class="line">      --&gt; 特殊用法</span><br><span class="line">        &#123;</span><br><span class="line">          // 所有入口文件最终只会形成一个chunk, 输出出去只有一个bundle文件。</span><br><span class="line">          index: [&#x27;./src/index.js&#x27;, &#x27;./src/count.js&#x27;], </span><br><span class="line">          // 形成一个chunk，输出一个bundle文件。</span><br><span class="line">          add: &#x27;./src/add.js&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">*/</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="output-输出"   >
+          <a href="#output-输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#output-输出" class="headerlink" title="output 输出"></a>output 输出</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">  // 文件名称（指定名称+目录）</span><br><span class="line">  filename: &#x27;js/[name].js&#x27;,</span><br><span class="line">  // 输出文件目录（将来所有资源输出的公共目录）</span><br><span class="line">  path: resolve(__dirname, &#x27;build&#x27;),</span><br><span class="line">  // 所有资源引入公共路径前缀 --&gt; &#x27;imgs/a.jpg&#x27; --&gt; &#x27;/imgs/a.jpg&#x27;</span><br><span class="line">  publicPath: &#x27;/&#x27;,</span><br><span class="line">  chunkFilename: &#x27;js/[name]_chunk.js&#x27;, // 非入口chunk的名称</span><br><span class="line">  // library: &#x27;[name]&#x27;, // 整个库向外暴露的变量名</span><br><span class="line">  // libraryTarget: &#x27;window&#x27; // 变量名添加到哪个上 browser</span><br><span class="line">  // libraryTarget: &#x27;global&#x27; // 变量名添加到哪个上 node</span><br><span class="line">  // libraryTarget: &#x27;commonjs&#x27; // 通过commonJs语法暴露name</span><br><span class="line">  environment:&#123;</span><br><span class="line">      // 告诉webpack打包时不使用箭头函数包裹</span><br><span class="line">      arrowFunction :false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="module-loader"   >
+          <a href="#module-loader" class="heading-link"><i class="fas fa-link"></i></a><a href="#module-loader" class="headerlink" title="module loader"></a>module loader</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    // loader的配置</span><br><span class="line">    &#123;</span><br><span class="line">      test: /\.css$/,</span><br><span class="line">      // 多个loader用use</span><br><span class="line">      use: [&#x27;style-loader&#x27;, &#x27;css-loader&#x27;]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      test: /\.js$/,</span><br><span class="line">      // 排除node_modules下的js文件</span><br><span class="line">      exclude: /node_modules/,</span><br><span class="line">      // 只检查 src 下的js文件</span><br><span class="line">      include: resolve(__dirname, &#x27;src&#x27;),</span><br><span class="line">      // 优先执行</span><br><span class="line">      enforce: &#x27;pre&#x27;,</span><br><span class="line">      // 延后执行</span><br><span class="line">      // enforce: &#x27;post&#x27;,</span><br><span class="line">      // 单个loader用loader</span><br><span class="line">      loader: &#x27;eslint-loader&#x27;,</span><br><span class="line">      options: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      // 以下配置只会生效一个</span><br><span class="line">      oneOf: []</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="plugins-插件"   >
+          <a href="#plugins-插件" class="heading-link"><i class="fas fa-link"></i></a><a href="#plugins-插件" class="headerlink" title="plugins 插件"></a>plugins 插件</h3>
+      
+        <h3 id="resolve-模块解析"   >
+          <a href="#resolve-模块解析" class="heading-link"><i class="fas fa-link"></i></a><a href="#resolve-模块解析" class="headerlink" title="resolve 模块解析"></a>resolve 模块解析</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 解析模块的规则</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    // 1.配置解析模块路径别名: 优点简写路径 缺点路径没有提示</span><br><span class="line">    // 2.加快打包速度</span><br><span class="line">    alias: &#123;</span><br><span class="line">       // 模块路径别名</span><br><span class="line">      $css: resolve(__dirname, &#x27;src/css&#x27;)，</span><br><span class="line">      &#x27;@&#x27;: resolve(&#x27;src&#x27;)</span><br><span class="line">    &#125;,</span><br><span class="line">    // 指定哪些后缀的模块可以省略后缀</span><br><span class="line">    extensions: [&#x27;.js&#x27;, &#x27;.json&#x27;, &#x27;.jsx&#x27;, &#x27;.css&#x27;],</span><br><span class="line">    // 告诉 webpack 解析模块是去找哪个目录</span><br><span class="line">    modules: [resolve(__dirname, &#x27;../../node_modules&#x27;), &#x27;node_modules&#x27;]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="devServer"   >
+          <a href="#devServer" class="heading-link"><i class="fas fa-link"></i></a><a href="#devServer" class="headerlink" title="devServer"></a>devServer</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">  // 运行代码的目录</span><br><span class="line">  contentBase: resolve(__dirname, &#x27;build&#x27;),</span><br><span class="line">  // 监视 contentBase 目录下的所有文件，一旦文件变化就会 reload</span><br><span class="line">  watchContentBase: true,</span><br><span class="line">  watchOptions: &#123;</span><br><span class="line">    // 忽略文件</span><br><span class="line">    ignored: /node_modules/</span><br><span class="line">  &#125;,</span><br><span class="line">  // 启动gzip压缩</span><br><span class="line">  compress: true,</span><br><span class="line">  // 端口号</span><br><span class="line">  port: 5000,</span><br><span class="line">  // 域名</span><br><span class="line">  host: &#x27;localhost&#x27;,</span><br><span class="line">  // 自动打开浏览器</span><br><span class="line">  open: true,</span><br><span class="line">  // 开启HMR功能</span><br><span class="line">  hot: true,</span><br><span class="line">  // 不要显示启动服务器日志信息</span><br><span class="line">  clientLogLevel: &#x27;none&#x27;,</span><br><span class="line">  // 除了一些基本启动信息以外，其他内容都不要显示</span><br><span class="line">  quiet: true,</span><br><span class="line">  // 如果出错了，不要全屏提示~</span><br><span class="line">  overlay: false,</span><br><span class="line">  // 服务器代理 --&gt; 解决开发环境跨域问题</span><br><span class="line">  proxy: &#123;</span><br><span class="line">    // 一旦devServer(5000)服务器接受到 /api/xxx 的请求，就会把请求转发到另外一个服务器(3000)</span><br><span class="line">    &#x27;/api&#x27;: &#123;</span><br><span class="line">      target: &#x27;http://localhost:3000&#x27;,</span><br><span class="line">      // 发送请求时，请求路径重写：将 /api/xxx --&gt; /xxx （去掉/api）</span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        &#x27;^/api&#x27;: &#x27;&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="optimization"   >
+          <a href="#optimization" class="heading-link"><i class="fas fa-link"></i></a><a href="#optimization" class="headerlink" title="optimization"></a>optimization</h3>
+        <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"> optimization: &#123;</span><br><span class="line">  splitChunks: &#123;</span><br><span class="line">    chunks: &#x27;all&#x27;</span><br><span class="line">    // 默认值，可以不写~</span><br><span class="line">    /* minSize: 30 * 1024, // 分割的chunk最小为30kb</span><br><span class="line">    maxSiza: 0, // 最大没有限制</span><br><span class="line">    minChunks: 1, // 要提取的chunk最少被引用1次</span><br><span class="line">    maxAsyncRequests: 5, // 按需加载时并行加载的文件的最大数量</span><br><span class="line">    maxInitialRequests: 3, // 入口js文件最大并行请求数量</span><br><span class="line">    automaticNameDelimiter: &#x27;~&#x27;, // 名称连接符</span><br><span class="line">    name: true, // 可以使用命名规则</span><br><span class="line">    cacheGroups: &#123;</span><br><span class="line">      // 分割chunk的组</span><br><span class="line">      // node_modules文件会被打包到 vendors 组的chunk中。--&gt; vendors~xxx.js</span><br><span class="line">      // 满足上面的公共规则，如：大小超过30kb，至少被引用一次。</span><br><span class="line">      vendors: &#123;</span><br><span class="line">        test: /[\\/]node_modules[\\/]/,</span><br><span class="line">        // 优先级</span><br><span class="line">        priority: -10</span><br><span class="line">      &#125;,</span><br><span class="line">      default: &#123;</span><br><span class="line">        // 要提取的chunk最少被引用2次</span><br><span class="line">        minChunks: 2,</span><br><span class="line">        // 优先级</span><br><span class="line">        priority: -20,</span><br><span class="line">        // 如果当前要打包的模块，和之前已经被提取的模块是同一个，就会复用，而不是重新打包模块</span><br><span class="line">        reuseExistingChunk: true</span><br><span class="line">      &#125; </span><br><span class="line">    &#125;*/</span><br><span class="line">  &#125;,</span><br><span class="line">  // 将当前模块的记录其他模块的hash单独打包为一个文件 runtime</span><br><span class="line">  // 解决：修改a文件导致b文件的contenthash变化</span><br><span class="line">  runtimeChunk: &#123;</span><br><span class="line">    name: entrypoint =&gt; `runtime-$&#123;entrypoint.name&#125;`</span><br><span class="line">  &#125;,</span><br><span class="line">  minimizer: [</span><br><span class="line">    // 配置生产环境的压缩方案：js和css</span><br><span class="line">    new TerserWebpackPlugin(&#123;</span><br><span class="line">      // 开启缓存</span><br><span class="line">      cache: true,</span><br><span class="line">      // 开启多进程打包</span><br><span class="line">      parallel: true,</span><br><span class="line">      // 启动source-map</span><br><span class="line">      sourceMap: true</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://www.baixiu.online">Ji Feng</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://www.baixiu.online/2021/11/06/webpack%E9%85%8D%E7%BD%AE/">http://www.baixiu.online/2021/11/06/webpack%E9%85%8D%E7%BD%AE/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/11/06/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">正向代理与反向代理</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/10/03/hello-world/"><span class="paginator-prev__text">Hello World</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="utterances-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E4%BD%93%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">
+          大体配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#entry-%E5%85%A5%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text">
+          entry 入口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-%E8%BE%93%E5%87%BA"><span class="toc-number">3.</span> <span class="toc-text">
+          output 输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-loader"><span class="toc-number">4.</span> <span class="toc-text">
+          module loader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plugins-%E6%8F%92%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">
+          plugins 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resolve-%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-number">6.</span> <span class="toc-text">
+          resolve 模块解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#devServer"><span class="toc-number">7.</span> <span class="toc-text">
+          devServer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#optimization"><span class="toc-number">8.</span> <span class="toc-text">
+          optimization</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://p3-passport.byteacctimg.com/img/user-avatar/b7f743a0a08277f13eca3b9b66e9e082~300x300.image" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/yfengn" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://juejin.cn/user/651370288134456" target="_blank" rel="noopener" data-popover="social.juejin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">掘</span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/qq_45503196?spm=1000.2115.3001.5343" target="_blank" rel="noopener" data-popover="social.csdn" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">CSDN</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">20</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Ji Feng</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (false) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'http://www.baixiu.online/2021/11/06/webpack%E9%85%8D%E7%BD%AE/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script data-pjax="">function loadUtterances() {
+  var d = document, s = d.createElement('script');
+  var container = d.getElementById('utterances-container');
+
+  if (!container) {
+    return;
+  }
+  s.src = 'https://utteranc.es/client.js';
+  s.setAttribute('repo', 'yfengn/yfengn.github.io');
+  s.setAttribute('issue-term', 'title');
+  s.setAttribute('label', 'utterances');
+  s.setAttribute('theme', 'github-light');
+  s.setAttribute('crossorigin', 'anonymous');
+  s.setAttribute('async', '');
+  if (true) {
+    s.setAttribute('data-pjax-rm', '');
+  }
+  container.append(s);
+}
+
+if (true) {
+  loadUtterances();
+} else {
+  window.addEventListener('DOMContentLoaded', loadUtterances, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>

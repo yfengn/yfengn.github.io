@@ -1,0 +1,812 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="baidu-site-verification" content="code-MGPhAMzhIY"><meta property="og:type" content="website">
+<meta property="og:title" content="陈积锋的博客">
+<meta property="og:url" content="http://www.baixiu.online/page/2/index.html">
+<meta property="og:site_name" content="陈积锋的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Ji Feng">
+<meta name="twitter:card" content="summary"><title>陈积锋的博客</title><link ref="canonical" href="http://www.baixiu.online/page/2/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: true,
+  pjax: {"avoidBanner":true},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">陈积锋的博客</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/26/%E4%BB%8E0%E5%88%B01%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%89%8B%E6%9E%B6/">从0到1实现前端自定义脚手架</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-26</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="效果展示"   >
+          <a href="#效果展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#效果展示" class="headerlink" title="效果展示"></a><strong>效果展示</strong></h2>
+      <ul>
+<li>使用commander命令式效果</li>
+</ul>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8abc8ebd027840889e396264547d8f9a~tplv-k3u1fbpfcp-watermark.image"  alt="image.png">
+      </p>
+<ul>
+<li>使用inquirer交互式效果<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ef99e2f604d24b32ac0f0700686b88e4~tplv-k3u1fbpfcp-watermark.image"  alt="image.png">
+      </li>
+</ul>
+<p>初始化操作</p>
+<ul>
+<li>使用 <code>npm init -y</code> 命令快速生成 package.json 文件</li>
+<li>设置上 <code>name</code> 和 <code>main</code> 的值</li>
+<li>需要加上bin的配置项，否则可能会执行全局命令无效，<code>bin</code>字段：可以自定义脚手架工具的命令，例如下面的<code>mycli</code>，而<code>mycli</code>后面的就是命令的执行脚本。</li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;mycli&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;main&quot;</span>: <span class="string">&quot;index.js&quot;</span>,</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;bin&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;mycli&quot;</span>: <span class="string">&quot;bin/index.js&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;keywords&quot;</span>: [],</span><br><span class="line">  <span class="string">&quot;author&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>创建<code>index.js</code>文件,输入内容 <code>#!/usr/bin/env node</code> 指定以node环境运行</li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line">#!<span class="regexp">/usr/</span>bin/env node <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello mycli!&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li><p>使用 <code>npm link</code> 命令创建全局module，会在全局node变量下自动生成文件 &#x2F;node_modules&#x2F;mycli&#x2F;index.js，就可以在本地对脚手架工具进行调试了</p>
+</li>
+<li><p>安装依赖 <code>npm install chalk shelljs inquirer --save</code></p>
+<ul>
+<li><code>chalk</code> – 是一个node输出log的样式库</li>
+<li><code>shelljs</code> – 见名知义是执行shell命令的库</li>
+<li><code>inquirer</code> – 交互式命令库</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="目录结构"   >
+          <a href="#目录结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- mycli </span><br><span class="line">    - node_modules </span><br><span class="line">    - template </span><br><span class="line">        - vue </span><br><span class="line">            - vue.<span class="property">html</span> </span><br><span class="line">        - h5 </span><br><span class="line">            - h5.<span class="property">html</span></span><br><span class="line">        ...</span><br><span class="line">    - createProject.<span class="property">js</span> </span><br><span class="line">    - index.<span class="property">js</span> </span><br><span class="line">    - package.<span class="property">json</span></span><br></pre></td></tr></table></div></figure>
+<ul>
+<li><code>node_modules</code> 脚手架所需要依赖</li>
+<li><code>template</code> 该目录下存放的是cli需要的模板, 用户使用脚手架生成的最终项目就是从这里copy出去的</li>
+<li><code>createProject.js</code> 拉去项目的代码都在这里</li>
+<li><code>index.js</code> 脚手架入口文件</li>
+<li><code>package.json</code> 对项目及模块的描述</li>
+</ul>
+
+        <h2 id="具体代码"   >
+          <a href="#具体代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h2>
+      <ul>
+<li><code>index.js</code></li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="keyword">let</span> program = <span class="built_in">require</span>(<span class="string">&#x27;commander&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> createProject = <span class="built_in">require</span>(<span class="string">&#x27;./createProject&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置版本号和参数，通过 mycli --help 查看</span></span><br><span class="line">program.<span class="title function_">version</span>(<span class="string">&#x27;1.0.0&#x27;</span>)</span><br><span class="line">    .<span class="title function_">option</span>(<span class="string">&#x27;-t, --type &lt;name&gt;&#x27;</span>, <span class="string">&#x27;project type&#x27;</span>)</span><br><span class="line">    .<span class="title function_">option</span>(<span class="string">&#x27;-n, --type &lt;name&gt;&#x27;</span>, <span class="string">&#x27;project type&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 捕获命令和参数 eg： mycli create test -t vue</span></span><br><span class="line">program</span><br><span class="line">    .<span class="title function_">command</span>(<span class="string">&#x27;create &lt;name&gt;&#x27;</span>)</span><br><span class="line">    .<span class="title function_">action</span>(<span class="keyword">function</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="title function_">createProject</span>(name, program.<span class="property">type</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">program.<span class="title function_">parse</span>(process.<span class="property">argv</span>)</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li><code>createProject.js</code></li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> chalk = <span class="built_in">require</span>(<span class="string">&#x27;chalk&#x27;</span>); <span class="comment">// node终端样式库</span></span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> inquirer = <span class="built_in">require</span>(<span class="string">&#x27;inquirer&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;shelljs/global&#x27;</span>); <span class="comment">// 执行shell脚本</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> log = <span class="keyword">function</span>(<span class="params">txt</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(chalk.<span class="property">green</span>.<span class="title function_">bold</span>(txt))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">createProject</span>(<span class="params">name, type</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> p = process.<span class="title function_">cwd</span>() <span class="comment">// 获取当前路径</span></span><br><span class="line">    <span class="title function_">cd</span>(p) <span class="comment">// shell cd</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检测是否存在文件夹， 如果存在，是否需要删除后安装</span></span><br><span class="line">    <span class="keyword">if</span>(fs.<span class="title function_">existsSync</span>(name)) &#123;</span><br><span class="line">        <span class="title function_">log</span>(<span class="string">&#x27;project exists, please rename it&#x27;</span>);</span><br><span class="line">        <span class="keyword">var</span> questions = [</span><br><span class="line">            &#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&#x27;confirm&#x27;</span>,</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&#x27;isRemoveDir&#x27;</span>,</span><br><span class="line">            <span class="attr">message</span>: <span class="string">`delete <span class="subst">$&#123;name&#125;</span> ?`</span>,</span><br><span class="line">            <span class="attr">default</span>: <span class="literal">false</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> answer = <span class="keyword">await</span> inquirer.<span class="title function_">prompt</span>(questions).<span class="title function_">then</span>(<span class="function">(<span class="params">answers</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> answers</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!answer.<span class="property">isRemoveDir</span>) &#123;</span><br><span class="line">            process.<span class="title function_">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">rm</span>(<span class="string">&#x27;-rf&#x27;</span>, name); <span class="comment">// shell rm </span></span><br><span class="line">        <span class="title function_">log</span>(<span class="string">`delete <span class="subst">$&#123;name&#125;</span> success`</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> np = path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;template&#x27;</span>, type);</span><br><span class="line">    <span class="title function_">cp</span>(<span class="string">&#x27;-R&#x27;</span>, np+<span class="string">&#x27;/&#x27;</span>, name) <span class="comment">// shell cp</span></span><br><span class="line">    <span class="title function_">log</span>(<span class="string">`拉取 &#x27;<span class="subst">$&#123;type&#125;</span>&#x27; 项目成功！`</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">cd</span>(name) <span class="comment">// shell cd</span></span><br><span class="line">    <span class="title function_">log</span>(<span class="string">&#x27;设置淘宝镜像源 --- npm config set registry http://registry.npm.taobao.org&#x27;</span>)</span><br><span class="line">    <span class="title function_">exec</span>(<span class="string">&#x27;npm config set registry http://registry.npm.taobao.org&#x27;</span>) <span class="comment">// 执行自定义的shell命令 npm config set registry http://registry.npm.taobao.org</span></span><br><span class="line">    <span class="title function_">log</span>(<span class="string">&#x27;安装模块 --- npm install&#x27;</span>)</span><br><span class="line">    <span class="title function_">log</span>(<span class="string">&#x27;安装模块中...&#x27;</span>)</span><br><span class="line">    <span class="title function_">log</span>(<span class="string">&#x27;安装耗时可能会很长，请耐心等待，您也可以通过 ctrl+c停止安装， 手动 npm install&#x27;</span>)</span><br><span class="line">    <span class="title function_">exec</span>(<span class="string">&#x27;npm install&#x27;</span>) <span class="comment">// 执行自定义的shell命令 npm install</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里的逻辑是自定义的，根据需求自己完成</span></span><br><span class="line">    <span class="keyword">if</span>(type != <span class="string">&#x27;jquery&#x27;</span>) &#123;</span><br><span class="line">        <span class="title function_">log</span>(<span class="string">&#x27;正在启动项目&#x27;</span>)</span><br><span class="line">        <span class="title function_">exec</span>(<span class="string">&#x27;npm start&#x27;</span>) <span class="comment">// 执行自定义的shell命令 npm start</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">log</span>(<span class="string">&#x27;脚手架初始化完成&#x27;</span>)</span><br><span class="line">    process.<span class="title function_">exit</span>() </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = createProject</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="使用方式"   >
+          <a href="#使用方式" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2>
+      <ul>
+<li><code>mycli --help</code> –help是commander自带的命令， 可以输出脚手架的命令</li>
+<li><code>mycli create demo -t vue</code> 这是我们自定义的命令， 创建一个demo文件夹，以vue作为模板</li>
+</ul>
+
+        <h2 id="项目改造"   >
+          <a href="#项目改造" class="heading-link"><i class="fas fa-link"></i></a><a href="#项目改造" class="headerlink" title="项目改造"></a>项目改造</h2>
+      <p>使用commander命令操作太过繁琐，并且记不住参数，我们使用inquirer改造成彻底的交互式脚手架</p>
+<ul>
+<li>修改 <code>index.js</code></li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="keyword">const</span> createProject = <span class="built_in">require</span>(<span class="string">&#x27;./createProject&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> inquirer = <span class="built_in">require</span>(<span class="string">&#x27;inquirer&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promptList = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;input&#x27;</span>,</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;请输入项目名&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;name&#x27;</span>,</span><br><span class="line">        <span class="attr">default</span>: <span class="string">&#x27;my-project&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;list&#x27;</span>,</span><br><span class="line">        <span class="attr">message</span>: <span class="string">&#x27;请选择项目类型&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;type&#x27;</span>,</span><br><span class="line">        <span class="attr">choices</span>: fs.<span class="title function_">readdirSync</span>(path.<span class="title function_">join</span>(__dirname,<span class="string">&#x27;template&#x27;</span>)) <span class="comment">// 通过fs模块读取tempate目录下的目录列表</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">inquirer.<span class="title function_">prompt</span>(promptList).<span class="title function_">then</span>(<span class="function">(<span class="params">answers</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">createProject</span>(answers.<span class="property">name</span>, answers.<span class="property">type</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li>启动命令 <code>mycli</code>, 不用记住繁琐的参数选项，直接通过提示进行操作</li>
+</ul>
+
+        <h2 id="总结"   >
+          <a href="#总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+      <p>自定义脚手架依靠node环境，通过node提供的fs模块，进行文件操作。npm上也提供了各类的命令库（commander , shelljs ）和交互式的库(inquirer), 为我们提供了便利，我们主要进行操作就是提供我们自己的脚手架模板</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/20/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86%E6%A3%80%E6%B5%8B/">客户端检测之用户代理检测</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>用户代理检测指的是，通过检测用户代理字符串来确定实际使用的浏览器，其中可以通过JavaScript的navigator.userAgent属性访问。在服务器端，通过检测用户代理字符串来确定用户使用的浏览器是一种常用而且广为接受的做法。而在客户端，用户代理检测一般被当做一种万不得已才用的做法，它的优先级一般排在能力检测和怪癖检测之后</p>
+<p>说到能力检测和怪癖检测，那我们先来聊聊它们是什么</p>
+<p><strong>能力检测：</strong> 在编写代码之前先检测待定浏览器的能力。例如，脚本在调用某个函数前，可能要先检测这个函数是否存在。这种检测让开发人员从考虑具体的浏览器和版本中解放出来，让他们把注意力集中到相应的能力是否存在上。但是能力检测无法精确的检测待定浏览器和版本。</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getElement</span>(<span class="params">id</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="property">getElementById</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(id);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="property">all</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">document</span>.<span class="property">all</span>[id];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;No way to retrieve element!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>怪癖检测</strong>：怪癖检测就是想要知道浏览器存在什么缺陷（bug）。怪癖检测的目标是识别浏览器的特殊行为。通常要尝试运行一段代码，以确定某一特性能不能正常工作。例如：在IE8及更早版本中存在一个 bug，即如果某个实例属性与[[Enumerable]]标记为 false 的某个原型属性同名，那么该实例属性将不会出现在 for-in 循环当中。</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hasDontEnumQuirk = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> o = &#123; toString : <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125; &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> o)&#123;</span><br><span class="line">        <span class="keyword">if</span> (prop == <span class="string">&quot;toString&quot;</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></div></figure>
+<p>以上代码通过一个匿名函数来测试这个怪癖，函数中创建了一个带有toString()方法的对象，如果在正确的ECMAScript实现中，那么该属性则会出现在for in循环中。</p>
+<p>知道了能力检测和怪癖检测的基本概念以后，我们再来看看用户代理检测是如何实现的？</p>
+<p><strong>用户代理字符串检测技术</strong></p>
+<p>一般情况下，直到呈现引擎和最低限度的版本就可以决定是否可以使用某些操作方法了</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(isEs6 || isEs7)&#123; <span class="comment">// 不推荐这种写法</span></span><br><span class="line">    <span class="comment">// code...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>上面这种代码其实很脆弱，因为它要依据特定的版本来决定做什么，如果是IE8或者新版本出来了，就必须更新这些代码，于是比较推荐下面写法</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(isVerson &gt;= <span class="number">6</span>)&#123;</span><br><span class="line">    <span class="comment">// code...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>1.1 识别呈现引擎</strong></p>
+<p>目前有这五种主要的呈现引擎：IE、Gecko、Webkit、KHTML、Opera。</p>
+<p>为了不在全局作用域中添加多余的变量，我们使用模块增强模式来封装检测脚本，基础结构如下：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> engine = &#123;</span><br><span class="line">        <span class="comment">//呈现引擎</span></span><br><span class="line">        <span class="attr">ie</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">gecko</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">webkit</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">khtml</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">opera</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="comment">//具体版本号</span></span><br><span class="line">        <span class="attr">ver</span>: <span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">engine</span>: engine</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>要正确的识别呈现引擎，关键是检测顺序要正确。第一步是识别Opera，要识别Opera，必须得检测window.opera，调用version()方法可以返回一个表示浏览器版本的字符串。</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">opera</span>) &#123;</span><br><span class="line">    engine.<span class="property">ver</span> = <span class="variable language_">window</span>.<span class="property">opera</span>.<span class="title function_">version</span>();</span><br><span class="line">    engine.<span class="property">opera</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>放在第二位检测的呈现引擎是Webkit，WebKit用户代理字符串中的“AppleWebKit”是独一无二的，因此检测这个字符串最合适。</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(<span class="regexp">/AppleWebKit/</span>(\S+)/.<span class="title function_">test</span>(us))&#123;</span><br><span class="line">    engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">webkit</span>=<span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>接下来测试呈现引擎KHTML。</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/KHTML/</span>(\S+)/.<span class="title function_">test</span>(ua) || <span class="regexp">/Konqueror/</span>([^;]+)/.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//khtml 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">khtml</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></div></figure>
+<p>排除了 Webkit 和 KHTML 之后，就可以准确地检测出 Gecko，它的版本号出现在字符串“rv:”的后面：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/rv:([^)]+)) Gecko/</span>\d&#123;<span class="number">8</span>&#125;/.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//gecko 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">gecko</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></div></figure>
+<p>最后是检测 IE：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/MSIE ([^;]+)/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//ie 引擎 </span></span><br><span class="line">    <span class="comment">// 这里正则表达式中的取反符号，是为了取得不是分号的所有字符</span></span><br><span class="line">    engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">ie</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>1.2 识别浏览器</strong></p>
+<p>为 client 对象添加了新属性：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">var</span> browser = &#123;</span><br><span class="line">            <span class="comment">//浏览器</span></span><br><span class="line">            <span class="attr">ie</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">firefox</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">safari</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">konq</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">opera</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="attr">chrome</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="comment">//具体版本号</span></span><br><span class="line">            <span class="attr">ver</span>: <span class="literal">null</span></span><br><span class="line">        &#125;;</span><br><span class="line"> <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">engine</span>: engine,</span><br><span class="line">        <span class="attr">browser</span>:browser</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>由于大多数浏览器与其呈现引擎密切相关，所以下面的检测浏览器的代码与检测呈现引擎的代码是混合在一起的：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测呈现引擎、平台和设备</span></span><br><span class="line"><span class="keyword">var</span> ua = navigator.<span class="property">userAgent</span>;<span class="comment">//用户代理字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">opera</span>) &#123;<span class="comment">//opera 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = browser.<span class="property">ver</span> = <span class="variable language_">window</span>.<span class="property">opera</span>.<span class="title function_">version</span>();</span><br><span class="line">    engine.<span class="property">opera</span> = browser.<span class="property">opera</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/AppleWebKit/</span>(\S+)/.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//webkit 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">webkit</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//先区分 Chrome 与 Safari</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/Chrome/</span>(\S+)/.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">        browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        browser.<span class="property">chrome</span> = <span class="built_in">parseFloat</span>(browser.<span class="property">ver</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/Version/</span>(\S+)/.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">        browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        browser.<span class="property">safari</span> = <span class="built_in">parseFloat</span>(browser.<span class="property">ver</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//近似地确定版本号</span></span><br><span class="line">        <span class="keyword">var</span> safariVersion = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (engine.<span class="property">webkit</span> &lt; <span class="number">100</span>) &#123;</span><br><span class="line">            safariVersion = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (engine.<span class="property">webkit</span> &lt; <span class="number">312</span>) &#123;</span><br><span class="line">            safariVersion = <span class="number">1.2</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (engine.<span class="property">webkit</span> &lt; <span class="number">412</span>) &#123;</span><br><span class="line">            safariVersion = <span class="number">1.3</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            safariVersion = <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        browser.<span class="property">safari</span> = browser.<span class="property">ver</span> = safariVersion;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/KHTML/</span>(\S+)/.<span class="title function_">test</span>(ua) || <span class="regexp">/Konqueror/</span>([^;]+)/.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//khtml 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">khtml</span> = browser.<span class="property">konq</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/rv:([^)]+)) Gecko/</span>\d&#123;<span class="number">8</span>&#125;/.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//gecko 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">gecko</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/Firefox/</span>(\S+)/.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//是 Firefox</span></span><br><span class="line">        browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        browser.<span class="property">firefox</span> = <span class="built_in">parseFloat</span>(browser.<span class="property">ver</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/MSIE ([^;]+)/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//ie 引擎</span></span><br><span class="line">    engine.<span class="property">ver</span> = browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    engine.<span class="property">ie</span> = browser.<span class="property">ie</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>可以这样使用上面设计的代码：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (client.<span class="property">engine</span>.<span class="property">webkit</span>)&#123;<span class="comment">//WebKit 引擎</span></span><br><span class="line">    <span class="keyword">if</span> (client.<span class="property">browser</span>.<span class="property">chrome</span>)&#123;</span><br><span class="line">        <span class="comment">//Chrome</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (client.<span class="property">browser</span>.<span class="property">safari</span>)&#123;</span><br><span class="line">        <span class="comment">//Safari</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (client.<span class="property">engine</span>.<span class="property">gecko</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (client.<span class="property">browser</span>.<span class="property">firefox</span>)&#123;</span><br><span class="line">        <span class="comment">//Firefox</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//其他以 gecko 为呈现引擎的浏览器</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>1.3 识别平台</strong></p>
+<p>为 client 对象添加了新属性：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">...</span><br><span class="line">    <span class="comment">//平台</span></span><br><span class="line">    <span class="keyword">var</span> system = &#123;</span><br><span class="line">        <span class="attr">win</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">mac</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">x11</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line">...</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">engine</span>: engine,</span><br><span class="line">        <span class="attr">browser</span>:browser,</span><br><span class="line">        <span class="attr">system</span>: system</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>这样检测平台：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//识别平台</span></span><br><span class="line"><span class="keyword">var</span> p = navigator.<span class="property">platform</span>;</span><br><span class="line">system.<span class="property">win</span> = p.<span class="title function_">indexOf</span>(<span class="string">&quot;Win&quot;</span>) == <span class="number">0</span>;</span><br><span class="line">system.<span class="property">mac</span> = p.<span class="title function_">indexOf</span>(<span class="string">&quot;Mac&quot;</span>) == <span class="number">0</span>;</span><br><span class="line">system.<span class="property">x11</span> = (p.<span class="title function_">indexOf</span>(<span class="string">&quot;X11&quot;</span>) == <span class="number">0</span>) || (p.<span class="title function_">indexOf</span>(<span class="string">&quot;Linux&quot;</span>) == <span class="number">0</span>);</span><br></pre></td></tr></table></div></figure>
+<p><strong>1.4 识别windows 操作系统</strong></p>
+<p>由于不同的浏览器在不同的 Windows 操作系统中返回的字符串不一样，所以需要复杂一些的正则表达式：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (system.<span class="property">win</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/Win(?:dows )?([^do]&#123;2&#125;)\s?(\d+.\d+)?/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>] == <span class="string">&quot;NT&quot;</span>) &#123;</span><br><span class="line">            <span class="keyword">switch</span> (<span class="title class_">RegExp</span>[<span class="string">&quot;$2&quot;</span>]) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;5.0&quot;</span>:</span><br><span class="line">                    system.<span class="property">win</span> = <span class="string">&quot;2000&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;5.1&quot;</span>:</span><br><span class="line">                    system.<span class="property">win</span> = <span class="string">&quot;XP&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;6.0&quot;</span>:</span><br><span class="line">                    system.<span class="property">win</span> = <span class="string">&quot;Vista&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;6.1&quot;</span>:</span><br><span class="line">                    system.<span class="property">win</span> = <span class="string">&quot;7&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span> :</span><br><span class="line">                    system.<span class="property">win</span> = <span class="string">&quot;NT&quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>] == <span class="string">&quot;9x&quot;</span>) &#123;</span><br><span class="line">        system.<span class="property">win</span> = <span class="string">&quot;ME&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        system.<span class="property">win</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>这样使用：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (client.<span class="property">system</span>.<span class="property">win</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (client.<span class="property">system</span>.<span class="property">win</span> == <span class="string">&quot;XP&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">//XP</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (client.<span class="property">system</span>.<span class="property">win</span> == <span class="string">&quot;7&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">//win7</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>1.5 识别移动设备</strong></p>
+<p>为 system 对象添加新属性：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">...</span><br><span class="line">    <span class="comment">//平台</span></span><br><span class="line">    <span class="keyword">var</span> system = &#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">//移动设备</span></span><br><span class="line">        <span class="attr">iphone</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ipod</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ipad</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ios</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">android</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">nokiaN</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">winMobile</span>: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">...</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">engine</span>: engine,</span><br><span class="line">        <span class="attr">browser</span>:browser,</span><br><span class="line">        <span class="attr">system</span>: system</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>这样检测：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//识别移动设备</span></span><br><span class="line">system.<span class="property">iphone</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;iPhone&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">system.<span class="property">ipod</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;iPod&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">system.<span class="property">ipad</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;iPad&quot;</span>) &gt; -<span class="number">1</span>;</span><br></pre></td></tr></table></div></figure>
+<p>检测iOS版本 ：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测 iOS 版本</span></span><br><span class="line"><span class="keyword">if</span> (system.<span class="property">mac</span> &amp;&amp; ua.<span class="title function_">indexOf</span>(<span class="string">&quot;Mobile&quot;</span>) &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/CPU(?:iPhone)?OS (\d+_\d+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">        system.<span class="property">ios</span> = <span class="built_in">parseFloat</span>(<span class="title class_">RegExp</span>.<span class="property">$1</span>.<span class="title function_">replace</span>(<span class="string">&quot;_&quot;</span>, <span class="string">&quot;.&quot;</span>));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        system.<span class="property">ios</span> = <span class="number">2</span>;<span class="comment">//检测不出，所以猜测是更早的版本，比较稳妥</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>检测 Android 版本：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测 Android 版本</span></span><br><span class="line"><span class="keyword">if</span> (<span class="regexp">/Android (\d+.\d+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">    system.<span class="property">android</span> = <span class="built_in">parseFloat</span>(<span class="title class_">RegExp</span>.<span class="property">$1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>检测诺基亚 N 系列手机：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测诺基亚 N 系列手机</span></span><br><span class="line">system.<span class="property">nokiaN</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;NokiaN&quot;</span>) &gt; -<span class="number">1</span>;</span><br></pre></td></tr></table></div></figure>
+<p>然后这样使用：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (client.<span class="property">engine</span>.<span class="property">webkit</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (client.<span class="property">system</span>, iOS)&#123;</span><br><span class="line">        <span class="comment">//iOS</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (client.<span class="property">system</span>.<span class="property">android</span>)&#123;</span><br><span class="line">        <span class="comment">//Android</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>最后是 Windows Mobile（Windows CE）：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (system.<span class="property">win</span> == <span class="string">&quot;CE&quot;</span>) &#123;<span class="comment">//Windows Mobile 5.0 以及之前版本</span></span><br><span class="line">    system.<span class="property">winMobile</span> = system.<span class="property">win</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (system.<span class="property">win</span> == <span class="string">&quot;Ph&quot;</span>) &#123;<span class="comment">//Windows Mobile 5.0 以后版本</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/Windows Phone OS (\d+.\d+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">        system.<span class="property">win</span> = <span class="string">&quot;Phone&quot;</span>;</span><br><span class="line">        system.<span class="property">winMobile</span> = <span class="built_in">parseFloat</span>(<span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p><strong>1.6 识别游戏系统</strong></p>
+<p>为 system 对象添加新属性：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">...</span><br><span class="line">    <span class="comment">//平台</span></span><br><span class="line">    <span class="keyword">var</span> system = &#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        <span class="comment">//游戏系统</span></span><br><span class="line">        <span class="attr">wii</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ps</span>: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">...</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">engine</span>: engine,</span><br><span class="line">        <span class="attr">browser</span>:browser,</span><br><span class="line">        <span class="attr">system</span>: system</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>这样检测：</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//识别游戏系统</span></span><br><span class="line">system.<span class="property">wii</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;Wii&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">system.<span class="property">ps</span> = <span class="regexp">/playstation/i</span>.<span class="title function_">test</span>(ua);</span><br></pre></td></tr></table></div></figure>
+<p><strong>完整代码</strong></p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//呈现引擎</span></span><br><span class="line">    <span class="keyword">var</span> engine = &#123;</span><br><span class="line">        <span class="attr">ie</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">gecko</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">webkit</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">khtml</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">opera</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="comment">//具体版本号</span></span><br><span class="line">        <span class="attr">ver</span>: <span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//浏览器</span></span><br><span class="line">    <span class="keyword">var</span> browser = &#123;</span><br><span class="line">        <span class="attr">ie</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">firefox</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">safari</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">konq</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">opera</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">chrome</span>: <span class="number">0</span>,</span><br><span class="line"></span><br><span class="line">        <span class="comment">//具体版本号</span></span><br><span class="line">        <span class="attr">ver</span>: <span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//平台</span></span><br><span class="line">    <span class="keyword">var</span> system = &#123;</span><br><span class="line">        <span class="attr">win</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">mac</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">x11</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">        <span class="comment">//移动设备</span></span><br><span class="line">        <span class="attr">iphone</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ipod</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ipad</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ios</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">android</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">nokiaN</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">winMobile</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">        <span class="comment">//游戏系统</span></span><br><span class="line">        <span class="attr">wii</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">ps</span>: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//检测呈现引擎、平台和设备</span></span><br><span class="line">    <span class="keyword">var</span> ua = navigator.<span class="property">userAgent</span>;<span class="comment">//用户代理字符串</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">opera</span>) &#123;<span class="comment">//opera 引擎</span></span><br><span class="line">        engine.<span class="property">ver</span> = browser.<span class="property">ver</span> = <span class="variable language_">window</span>.<span class="property">opera</span>.<span class="title function_">version</span>();</span><br><span class="line">        engine.<span class="property">opera</span> = browser.<span class="property">opera</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/AppleWebKit\/(\S+)/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//webkit 引擎</span></span><br><span class="line">        engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        engine.<span class="property">webkit</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//先区分 Chrome 与 Safari</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="regexp">/Chrome\/(\S+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">            browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">            browser.<span class="property">chrome</span> = <span class="built_in">parseFloat</span>(browser.<span class="property">ver</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/Version\/(\S+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">            browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">            browser.<span class="property">safari</span> = <span class="built_in">parseFloat</span>(browser.<span class="property">ver</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//近似地确定版本号</span></span><br><span class="line">            <span class="keyword">var</span> safariVersion = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (engine.<span class="property">webkit</span> &lt; <span class="number">100</span>) &#123;</span><br><span class="line">                safariVersion = <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (engine.<span class="property">webkit</span> &lt; <span class="number">312</span>) &#123;</span><br><span class="line">                safariVersion = <span class="number">1.2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (engine.<span class="property">webkit</span> &lt; <span class="number">412</span>) &#123;</span><br><span class="line">                safariVersion = <span class="number">1.3</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                safariVersion = <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            browser.<span class="property">safari</span> = browser.<span class="property">ver</span> = safariVersion;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/KHTML\/(\S+)/</span>.<span class="title function_">test</span>(ua) || <span class="regexp">/Konqueror\/([^;]+)/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//khtml 引擎</span></span><br><span class="line">        engine.<span class="property">ver</span> = browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        engine.<span class="property">khtml</span> = browser.<span class="property">konq</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/rv:([^\)]+)\) Gecko\/\d&#123;8&#125;/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//gecko 引擎</span></span><br><span class="line">        engine.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        engine.<span class="property">gecko</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="regexp">/Firefox\/(\S+)/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//是 Firefox</span></span><br><span class="line">            browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">            browser.<span class="property">firefox</span> = <span class="built_in">parseFloat</span>(browser.<span class="property">ver</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/MSIE ([^;]+)/</span>.<span class="title function_">test</span>(ua)) &#123;<span class="comment">//ie 引擎</span></span><br><span class="line">        engine.<span class="property">ver</span> = browser.<span class="property">ver</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        engine.<span class="property">ie</span> = browser.<span class="property">ie</span> = <span class="built_in">parseFloat</span>(engine.<span class="property">ver</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//识别平台</span></span><br><span class="line">    <span class="keyword">var</span> p = navigator.<span class="property">platform</span>;</span><br><span class="line">    system.<span class="property">win</span> = p.<span class="title function_">indexOf</span>(<span class="string">&quot;Win&quot;</span>) == <span class="number">0</span>;</span><br><span class="line">    system.<span class="property">mac</span> = p.<span class="title function_">indexOf</span>(<span class="string">&quot;Mac&quot;</span>) == <span class="number">0</span>;</span><br><span class="line">    system.<span class="property">x11</span> = (p.<span class="title function_">indexOf</span>(<span class="string">&quot;X11&quot;</span>) == <span class="number">0</span>) || (p.<span class="title function_">indexOf</span>(<span class="string">&quot;Linux&quot;</span>) == <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//识别 Windows 操作系统</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ua:&quot;</span> + ua);</span><br><span class="line">    <span class="keyword">if</span> (system.<span class="property">win</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="regexp">/Win(?:dows )?([^do]&#123;2&#125;)\s?(\d+\.\d+)?/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>] == <span class="string">&quot;NT&quot;</span>) &#123;</span><br><span class="line">                <span class="keyword">switch</span> (<span class="title class_">RegExp</span>[<span class="string">&quot;$2&quot;</span>]) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;5.0&quot;</span>:</span><br><span class="line">                        system.<span class="property">win</span> = <span class="string">&quot;2000&quot;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;5.1&quot;</span>:</span><br><span class="line">                        system.<span class="property">win</span> = <span class="string">&quot;XP&quot;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;6.0&quot;</span>:</span><br><span class="line">                        system.<span class="property">win</span> = <span class="string">&quot;Vista&quot;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">&quot;6.1&quot;</span>:</span><br><span class="line">                        system.<span class="property">win</span> = <span class="string">&quot;7&quot;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">default</span> :</span><br><span class="line">                        system.<span class="property">win</span> = <span class="string">&quot;NT&quot;</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>] == <span class="string">&quot;9x&quot;</span>) &#123;</span><br><span class="line">            system.<span class="property">win</span> = <span class="string">&quot;ME&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            system.<span class="property">win</span> = <span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//识别移动设备</span></span><br><span class="line">    system.<span class="property">iphone</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;iPhone&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">    system.<span class="property">ipod</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;iPod&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">    system.<span class="property">ipad</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;iPad&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//检测 iOS 版本</span></span><br><span class="line">    <span class="keyword">if</span> (system.<span class="property">mac</span> &amp;&amp; ua.<span class="title function_">indexOf</span>(<span class="string">&quot;Mobile&quot;</span>) &gt; -<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="regexp">/CPU(?:iPhone)?OS (\d+_\d+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">            system.<span class="property">ios</span> = <span class="built_in">parseFloat</span>(<span class="title class_">RegExp</span>.<span class="property">$1</span>.<span class="title function_">replace</span>(<span class="string">&quot;_&quot;</span>, <span class="string">&quot;.&quot;</span>));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            system.<span class="property">ios</span> = <span class="number">2</span>;<span class="comment">//检测不出，所以猜测是更早的版本，比较稳妥</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//检测 Android 版本</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/Android (\d+\.\d+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">        system.<span class="property">android</span> = <span class="built_in">parseFloat</span>(<span class="title class_">RegExp</span>.<span class="property">$1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//检测诺基亚 N 系列手机</span></span><br><span class="line">    system.<span class="property">nokiaN</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;NokiaN&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//windows mobile</span></span><br><span class="line">    <span class="keyword">if</span> (system.<span class="property">win</span> == <span class="string">&quot;CE&quot;</span>) &#123;</span><br><span class="line">        system.<span class="property">winMobile</span> = system.<span class="property">win</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (system.<span class="property">win</span> == <span class="string">&quot;Ph&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="regexp">/Windows Phone OS (\d+.\d+)/</span>.<span class="title function_">test</span>(ua)) &#123;</span><br><span class="line">            system.<span class="property">win</span> = <span class="string">&quot;Phone&quot;</span>;</span><br><span class="line">            system.<span class="property">winMobile</span> = <span class="built_in">parseFloat</span>(<span class="title class_">RegExp</span>[<span class="string">&quot;$1&quot;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//识别游戏系统</span></span><br><span class="line">    system.<span class="property">wii</span> = ua.<span class="title function_">indexOf</span>(<span class="string">&quot;Wii&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">    system.<span class="property">ps</span> = <span class="regexp">/playstation/i</span>.<span class="title function_">test</span>(ua);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">engine</span>: engine,</span><br><span class="line">        <span class="attr">browser</span>: browser,</span><br><span class="line">        <span class="attr">system</span>: system</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/20/js%E7%9A%84%E5%87%A0%E7%A7%8D%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F/">js的几种继承方式</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>​ 1、原型继承</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &#x27;Person&#x27;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    this.age = 12</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = new Person();</span><br><span class="line">let a = new Child();</span><br><span class="line">let b = new Child();</span><br></pre></td></tr></table></div></figure>
+<p>优点：共享了父类构造函数的方法<br>缺点：</p>
+<ul>
+<li>不能向构造函数传参 </li>
+<li>子类实例共享了父类构造函数的引用属性</li>
+<li>无法实现多继承<br>2、构造函数继承<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line">function Child(name)&#123;</span><br><span class="line">    Person.call(this,name)</span><br><span class="line">    this.age = 12</span><br><span class="line">&#125;</span><br><span class="line">let a = new Child();</span><br><span class="line">let b = new Child();</span><br></pre></td></tr></table></div></figure>
+优点：</li>
+<li>可向构造函数传参。</li>
+<li>不共享父类构造函数的引用属性。</li>
+<li>可以进行多次继承（call多个父类函数）<br>缺点：</li>
+<li>无法实现函数的复用。</li>
+<li>只能继承父类构造函数中的属性和方法，不能继承父类构造函数原型上的方法，<br>3、组合继承<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line">function Child(name)&#123;</span><br><span class="line">    Person.call(this,name)</span><br><span class="line">    this.age = 12</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = new Person()</span><br><span class="line">Child.prototype.constructor = Child</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>可以向父类构造函数传参。</li>
+<li>可以复用构造函数原型上的方法。</li>
+<li>不会共享父类的引用属性。</li>
+</ul>
+<p>缺点：由于调用了两次构造函数方法，会存在一份多余的父类实例属性（耗内存）。</p>
+<p>4、组合继承优化</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line">function Child(name)&#123;</span><br><span class="line">    Person.call(this,name)</span><br><span class="line">    this.age = 12</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = Person.prototype</span><br><span class="line">Child.prototype.constructor = Child</span><br></pre></td></tr></table></div></figure>
+
+
+<p>优点：</p>
+<ul>
+<li>可以向父类构造函数传参。</li>
+<li>可以复用父类原型上的方法。</li>
+</ul>
+<p>缺点：当修复子类构造函数的指向后，父类实例的构造函数指向也会随之改变（这是我们不希望发生的）。</p>
+<p>5、寄生组合继承</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line">function Child(name)&#123;</span><br><span class="line">    Person.call(this,name)</span><br><span class="line">    this.age = 12</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = Object.create(Person.prototype)</span><br><span class="line">Child.prototype.constructor = Child</span><br></pre></td></tr></table></div></figure>
+
+<p>优点：弥补组合继承优化的不足</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/20/git%E4%B8%AD%E5%87%BA%E7%8E%B0Could%20not%20resolve%20hostname%20github%20Name%20or%20service%20not%20known%E9%97%AE%E9%A2%98/">git中出现Could not resolve hostname github Name or service not known问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在准备使用git pull命令从远程仓库中拉取代码或本地写好代码准备使用git push命令推送代码至远程仓库时可能会突然出现这个问题<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/09b4019326974389b40b31e7590c6707~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p>碰到这种问题时本人总结出几种解决方案供大家参考</p>
+<p>解决方案一</p>
+<blockquote>
+<p>登录Github，把原来的密钥删除，重新生成一个</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2b0bc6a49bd43178e8072824bec3892~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p> 解决方案二</p>
+<blockquote>
+<p>将本地的git用户名删除</p>
+<p>删除了以后重新使用git命令时就会要求你登录</p>
+<p><code>git config --system --unset credential.helper</code></p>
+</blockquote>
+<p>解决方案三</p>
+<blockquote>
+<p>进入控制面板在windows凭证管理中找到你远程仓库地址下对应的域名对它进行编辑账号密码(如果找不到可以新建一条)</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5fe4cb53b2404b02a86c644ff1c8a190~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p>解决方案四</p>
+<blockquote>
+<p>可能是因为系统中存在多个用户账号导致错误，可以尝试为当前项目重新配置用户账号</p>
+<p>git config –local user.name ‘xxx’</p>
+</blockquote>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/20/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83%E7%9A%84%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97%E5%92%8C%E5%88%86%E6%94%AF/">如何编写规范的提交日志和分支</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>Git 是目前非常流行的源代码管理工具。为了保持代码提交记录以及 git 分支结构清晰，方便后续维护，我们应该如何制定规范呢？</p>
+
+        <h2 id="1、git-分支命名规范"   >
+          <a href="#1、git-分支命名规范" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、git-分支命名规范" class="headerlink" title="1、git 分支命名规范"></a><strong>1、git 分支命名规范</strong></h2>
+      <p>git 分支主要包括：</p>
+<ol>
+<li><strong>主分支master</strong>：用于发布重大版本更新</li>
+<li><strong>开发主分支develop</strong>：日常开发在此分支进行，所有新功能都要以这个分支来创建自己的开发分支，该分支只做合并操作，不能直接在该分支上开发</li>
+<li><strong>临时性分支</strong>：用于应对一些特定的版本开发（验证没有问题后，应该删除此分支）。在日常开发为了能让团队成员清晰明了知道你这个分支做了什么，在创建分支时尽量带上以下前缀，有了前缀后面再加上你具体做了什么。</li>
+</ol>
+<blockquote>
+<ul>
+<li>feat-xxx：新增功能</li>
+<li>fix-xxx ：修补bug</li>
+<li>docs-xxx：仅修改了文档</li>
+<li>style-xxx：修改样式，不改变代码逻辑</li>
+<li>chore-xxx：不太重要的修改，比如代码风格、改变构建流程</li>
+<li>test-xxx：添加测试</li>
+</ul>
+</blockquote>
+<p>例如我要增加一个收藏商品的功能可以这样命名：feat-collect-goods</p>
+<p>注意事项：</p>
+<ul>
+<li>一个分支尽量开发一个功能模块，不要多个功能模块在一个分支上开发。</li>
+<li>分支在申请合并之前，最好是先 pull 一下 develop 主分支下来，看一下有没有冲突，如果有就先解决冲突后再申请合并。</li>
+</ul>
+
+        <h2 id="2、Commit-message-的格式"   >
+          <a href="#2、Commit-message-的格式" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、Commit-message-的格式" class="headerlink" title="2、Commit message 的格式"></a>2、Commit message 的格式</h2>
+      <p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。</p>
+<blockquote>
+<p>&lt;type&gt;(&lt;scope&gt;):&lt;subject&gt;</p>
+<p>&#x2F;&#x2F; 空一行</p>
+<p>&lt;body&gt;</p>
+<p>&#x2F;&#x2F; 空一行</p>
+<p>&lt;footer&gt;</p>
+</blockquote>
+<p>其中，Header 是必需的，Body 和 Footer 可以省略。</p>
+
+        <h3 id="2-1-Header"   >
+          <a href="#2-1-Header" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Header" class="headerlink" title="2.1 Header"></a>2.1 Header</h3>
+      <p>Header部分只有一行，包括三个字段：**<code>type</code><strong>（必需）、</strong><code>scope</code>**（可选）和<code>subject</code>（必需）。</p>
+<p><strong>（1）type</strong></p>
+<p><code>type</code>用于说明 commit 的类别，与分支命名前缀应该保持一致，也是以下几种标识。</p>
+<blockquote>
+<ul>
+<li>feat：新增功能</li>
+<li>fix：修复bug</li>
+<li>docs：修改了文档</li>
+<li>style：修改了样式，不改变代码逻辑</li>
+<li>chore：不太重要的修改，比如代码风格、改变构建流程</li>
+<li>test：添加测试</li>
+</ul>
+</blockquote>
+<p><strong>（2）scope</strong></p>
+<p><code>scope</code>用于说明 commit 影响的范围，范围可以是指定提交更改位置的任何内容。</p>
+<p><strong>（3）subject</strong></p>
+<p><code>subject</code>是 commit 目的的简短描述，不超过50个字符。</p>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如<code>change</code>，而不是<code>changed</code>或<code>changes</code></li>
+<li>第一个字母小写</li>
+<li>结尾不加句号（<code>.</code>）</li>
+<li>如果没有更合适的描述，可以直接写提交内容</li>
+</ul>
+
+        <h3 id="2-2-Body"   >
+          <a href="#2-2-Body" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-Body" class="headerlink" title="2.2 Body"></a>2.2 Body</h3>
+      <p>Body 部分是对本次 commit 的详细描述，应该说明代码变动的动机，以及与以前行为的对比。</p>
+<p>可以分成多行。一般重大需求更新需要把添加body说明。</p>
+
+        <h3 id="2-3-Footer"   >
+          <a href="#2-3-Footer" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-Footer" class="headerlink" title="2.3 Footer"></a>2.3 Footer</h3>
+      <p>指明影响的问题，一般是一个issure或需求文档。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/web%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8D%95%E4%BD%8D/">web开发中常见的几种单位</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
+<li> rem：相对于根元素而言，1rem等于根元素的font-size，一般浏览器的默认字体大小为16px</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html&#123;</span><br><span class="line">  font-size: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">  width: 20rem;</span><br><span class="line">  height: 20rem;</span><br><span class="line">  background-color: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>比如我们按照以上设置样式，可以看到如下效果</p>
+<p> 类名为box的元素宽度和高度为400px了。</p>
+<ul>
+<li>px：像素px是相对于显示器分辨率而言，不会随着可视窗口的改变而改变，属于绝对单位。</li>
+<li>em：相对于父级元素的font-size而确定具体大小，如果我们编写以下css代码</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">  font-size: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.children&#123;</span><br><span class="line">  width: 20em;</span><br><span class="line">  height: 20em;</span><br><span class="line">  background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>此时对应的页面效果如下，可以看出带有children类名的蓝色盒子的宽度和高度都为父级字体大小的20倍了。</p>
+<ul>
+<li>rpx：微信小程序中的相对单位，解决屏幕自适应的尺寸问题。</li>
+</ul>
+<p>以 iPhone6 为例，iPhone6 的屏幕宽度为 375px ，共有 750 个物理像素，则 750rpx &#x3D; 375px &#x3D; 750 物理像素。所以在微信小程序开发中推荐按750px出设计图，此时1rpx&#x3D;1px；</p>
+<ul>
+<li>vh：相对于视窗的高度计算大小，视窗高度为100vh;</li>
+</ul>
+<p>计算方式：比如视窗高度为100px时，1vh就为 （1 * 100）&#x2F; 100 &#x3D; 1px</p>
+<ul>
+<li>vw：相对于视窗的宽度计算大小，视窗高度为100vw;</li>
+</ul>
+<p>计算方式：同vh</p>
+<p>如有不足之处，还请大家多多指正。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/React%E8%84%9A%E6%89%8B%E6%9E%B6%20npm%20start%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99/">React脚手架 npm start运行报错</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>create-react-app创建应用后使用npm start报错</strong></p>
+<p>npm ERR! code ELIFECYCLE<br>npm ERR! errno 1<br>npm ERR! <span class="exturl"><a class="exturl__link"   href="mailto:&#x64;&#101;&#x6d;&#111;&#49;&#x40;&#48;&#x2e;&#49;&#x2e;&#48;" >&#x64;&#101;&#x6d;&#111;&#49;&#x40;&#48;&#x2e;&#49;&#x2e;&#48;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> start: <code>react-scripts start</code><br>npm ERR! Exit status 1<br>npm ERR!<br>npm ERR! Failed at the <span class="exturl"><a class="exturl__link"   href="mailto:&#x64;&#x65;&#109;&#111;&#49;&#64;&#48;&#46;&#49;&#x2e;&#48;" >&#x64;&#x65;&#109;&#111;&#49;&#64;&#48;&#46;&#49;&#x2e;&#48;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> start script.<br>npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</p>
+<p>npm ERR! A complete log of this run can be found in:<br>npm ERR!     D:\Program Files\nodejs\node_cache_logs\2021-10-13T12_09_20_406Z-debug.log</p>
+<p><strong>出现上述错误可以尝试在项目目录中创建.env文件，在文件中输入下面一行</strong></p>
+<blockquote>
+<p>skip_preflight_check&#x3D;true</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7633e322c99540eeabf1a9727e70c4c9~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p> 重新运行 npm start</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">正向代理与反向代理</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>- <strong>正向代理</strong><br>先搭建一个属于自己的代理服务器<br>1、用户发送请求到自己的代理服务器<br>2、自己的代理服务器发送请求到服务器<br>3、服务器将数据返回到自己的代理服务器<br>4、自己的代理服务器再将数据返回给用户<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4d74af94bcfe49b599a209987358933b~tplv-k3u1fbpfcp-zoom-1.image"  alt="正向代理">
+      </p>
+<p>正向代理的作用于用途：<br>作用：正向代理隐藏了用户，用户的请求被代理服务器接收代替，到了服务器，服务器并不知道用户是谁。<br>用途：当你用浏览器访问国外的网站时，被block(拒绝)时，你可以在国外搭建一个代理服务器，这样就可以正常访问了（只是举一个列子）<br>- <strong>反向代理</strong><br>1、用户发送请求到服务器（访问的其实是反向代理服务器，但用户不知道）<br>2、反向代理服务器发送请求到真正的服务器<br>3、真正的服务器将数据返回给反向代理服务器<br>4、反向代理服务器再将数据返回给用户<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8c3ec05198e43a9b29d3b9531de2e75~tplv-k3u1fbpfcp-zoom-1.image"  alt="这里写图片描述">
+      </p>
+<p>反向代理的作用于用途：<br>作用：用户请求过多，服务器会有一个处理的极限。所以使用反向代理服务器接受请求，再用均衡负载将请求分布给多个真实的服务器。既能提高效率还有一定的安全性。<br>用途：如果不采用代理，用户的IP、端口号直接暴露在Internet（尽管地址转换NAT），外部主机依然可以根据IP、端口号来开采主机安全漏洞，所以在企业网，一般都是采用代理服务器访问互联网。</p>
+<p>正向代理与反向代理最简单的区别：<br><strong>正向代理隐藏的是用户，反向代理隐藏的是服务器</strong></p>
+<p>本篇内容主要素材来自：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40112630/article/details/80392172" >https://blog.csdn.net/qq_40112630/article/details/80392172</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/webpack%E9%85%8D%E7%BD%AE/">webpack配置</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在平时的开发中总结了一些比较常用的配置信息，分享给有需要的小伙伴，同时也是给自己的一份webpack配置笔记。</p>
+
+        <h3 id="大体配置"   >
+          <a href="#大体配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#大体配置" class="headerlink" title="大体配置"></a>大体配置</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * webpack.config.js webpack 配置文件</span><br><span class="line"> * 作用：指示webpack 干哪些活</span><br><span class="line"> * 所有构建工具都是基于node.js平台运行~模块化采用common.js</span><br><span class="line"> */</span><br><span class="line">// resolve用来拼接绝对路径的方法</span><br><span class="line">const &#123;resolve&#125; = require(&#x27;path&#x27;);</span><br><span class="line">const HtmlWebpackPlugin = require(&#x27;html-webpack-plugin&#x27;);</span><br><span class="line"></span><br><span class="line">module.expotts = &#123;</span><br><span class="line">    entry: &#x27;./src/index.js&#x27;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#x27;js/built.js&#x27;,</span><br><span class="line">        path: resolve(__dirname, &#x27;buile&#x27;)</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: /.css$/,</span><br><span class="line">                use: [</span><br><span class="line">                    &#x27;style-loader&#x27;,</span><br><span class="line">                    &#x27;css-loader&#x27;</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">                     &#123;</span><br><span class="line">                test: /.less/,</span><br><span class="line">                use: [</span><br><span class="line">                    &#x27;style-loader&#x27;,</span><br><span class="line">                    &#x27;css-loader&#x27;,</span><br><span class="line">                    &#x27;less-loader&#x27;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        </span><br><span class="line">    ],</span><br><span class="line">    mode: &#x27;development&#x27;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: resolve(__dirname, &#x27;./build&#x27;),</span><br><span class="line">        compress: true,</span><br><span class="line">        port: 8088,</span><br><span class="line">        open: true</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="entry-入口"   >
+          <a href="#entry-入口" class="heading-link"><i class="fas fa-link"></i></a><a href="#entry-入口" class="headerlink" title="entry 入口"></a>entry 入口</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">  entry: 入口起点</span><br><span class="line">    1. string --&gt; &#x27;./src/index.js&#x27;</span><br><span class="line">      单入口</span><br><span class="line">      打包形成一个chunk。 输出一个bundle文件。</span><br><span class="line">      此时chunk的名称默认是 main</span><br><span class="line">    2. array  --&gt; [&#x27;./src/index.js&#x27;, &#x27;./src/add.js&#x27;]</span><br><span class="line">      多入口</span><br><span class="line">      所有入口文件最终只会形成一个chunk, 输出出去只有一个bundle文件。</span><br><span class="line">        --&gt; 只有在HMR功能中让html热更新生效~</span><br><span class="line">    3. object</span><br><span class="line">      多入口</span><br><span class="line">      有几个入口文件就形成几个chunk，输出几个bundle文件</span><br><span class="line">      此时chunk的名称是 key</span><br><span class="line"></span><br><span class="line">      --&gt; 特殊用法</span><br><span class="line">        &#123;</span><br><span class="line">          // 所有入口文件最终只会形成一个chunk, 输出出去只有一个bundle文件。</span><br><span class="line">          index: [&#x27;./src/index.js&#x27;, &#x27;./src/count.js&#x27;], </span><br><span class="line">          // 形成一个chunk，输出一个bundle文件。</span><br><span class="line">          add: &#x27;./src/add.js&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">*/</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="output-输出"   >
+          <a href="#output-输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#output-输出" class="headerlink" title="output 输出"></a>output 输出</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">  // 文件名称（指定名称+目录）</span><br><span class="line">  filename: &#x27;js/[name].js&#x27;,</span><br><span class="line">  // 输出文件目录（将来所有资源输出的公共目录）</span><br><span class="line">  path: resolve(__dirname, &#x27;build&#x27;),</span><br><span class="line">  // 所有资源引入公共路径前缀 --&gt; &#x27;imgs/a.jpg&#x27; --&gt; &#x27;/imgs/a.jpg&#x27;</span><br><span class="line">  publicPath: &#x27;/&#x27;,</span><br><span class="line">  chunkFilename: &#x27;js/[name]_chunk.js&#x27;, // 非入口chunk的名称</span><br><span class="line">  // library: &#x27;[name]&#x27;, // 整个库向外暴露的变量名</span><br><span class="line">  // libraryTarget: &#x27;window&#x27; // 变量名添加到哪个上 browser</span><br><span class="line">  // libraryTarget: &#x27;global&#x27; // 变量名添加到哪个上 node</span><br><span class="line">  // libraryTarget: &#x27;commonjs&#x27; // 通过commonJs语法暴露name</span><br><span class="line">  environment:&#123;</span><br><span class="line">      // 告诉webpack打包时不使用箭头函数包裹</span><br><span class="line">      arrowFunction :false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="module-loader"   >
+          <a href="#module-loader" class="heading-link"><i class="fas fa-link"></i></a><a href="#module-loader" class="headerlink" title="module loader"></a>module loader</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    // loader的配置</span><br><span class="line">    &#123;</span><br><span class="line">      test: /\.css$/,</span><br><span class="line">      // 多个loader用use</span><br><span class="line">      use: [&#x27;style-loader&#x27;, &#x27;css-loader&#x27;]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      test: /\.js$/,</span><br><span class="line">      // 排除node_modules下的js文件</span><br><span class="line">      exclude: /node_modules/,</span><br><span class="line">      // 只检查 src 下的js文件</span><br><span class="line">      include: resolve(__dirname, &#x27;src&#x27;),</span><br><span class="line">      // 优先执行</span><br><span class="line">      enforce: &#x27;pre&#x27;,</span><br><span class="line">      // 延后执行</span><br><span class="line">      // enforce: &#x27;post&#x27;,</span><br><span class="line">      // 单个loader用loader</span><br><span class="line">      loader: &#x27;eslint-loader&#x27;,</span><br><span class="line">      options: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      // 以下配置只会生效一个</span><br><span class="line">      oneOf: []</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="plugins-插件"   >
+          <a href="#plugins-插件" class="heading-link"><i class="fas fa-link"></i></a><a href="#plugins-插件" class="headerlink" title="plugins 插件"></a>plugins 插件</h3>
+      
+        <h3 id="resolve-模块解析"   >
+          <a href="#resolve-模块解析" class="heading-link"><i class="fas fa-link"></i></a><a href="#resolve-模块解析" class="headerlink" title="resolve 模块解析"></a>resolve 模块解析</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 解析模块的规则</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    // 1.配置解析模块路径别名: 优点简写路径 缺点路径没有提示</span><br><span class="line">    // 2.加快打包速度</span><br><span class="line">    alias: &#123;</span><br><span class="line">       // 模块路径别名</span><br><span class="line">      $css: resolve(__dirname, &#x27;src/css&#x27;)，</span><br><span class="line">      &#x27;@&#x27;: resolve(&#x27;src&#x27;)</span><br><span class="line">    &#125;,</span><br><span class="line">    // 指定哪些后缀的模块可以省略后缀</span><br><span class="line">    extensions: [&#x27;.js&#x27;, &#x27;.json&#x27;, &#x27;.jsx&#x27;, &#x27;.css&#x27;],</span><br><span class="line">    // 告诉 webpack 解析模块是去找哪个目录</span><br><span class="line">    modules: [resolve(__dirname, &#x27;../../node_modules&#x27;), &#x27;node_modules&#x27;]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="devServer"   >
+          <a href="#devServer" class="heading-link"><i class="fas fa-link"></i></a><a href="#devServer" class="headerlink" title="devServer"></a>devServer</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">  // 运行代码的目录</span><br><span class="line">  contentBase: resolve(__dirname, &#x27;build&#x27;),</span><br><span class="line">  // 监视 contentBase 目录下的所有文件，一旦文件变化就会 reload</span><br><span class="line">  watchContentBase: true,</span><br><span class="line">  watchOptions: &#123;</span><br><span class="line">    // 忽略文件</span><br><span class="line">    ignored: /node_modules/</span><br><span class="line">  &#125;,</span><br><span class="line">  // 启动gzip压缩</span><br><span class="line">  compress: true,</span><br><span class="line">  // 端口号</span><br><span class="line">  port: 5000,</span><br><span class="line">  // 域名</span><br><span class="line">  host: &#x27;localhost&#x27;,</span><br><span class="line">  // 自动打开浏览器</span><br><span class="line">  open: true,</span><br><span class="line">  // 开启HMR功能</span><br><span class="line">  hot: true,</span><br><span class="line">  // 不要显示启动服务器日志信息</span><br><span class="line">  clientLogLevel: &#x27;none&#x27;,</span><br><span class="line">  // 除了一些基本启动信息以外，其他内容都不要显示</span><br><span class="line">  quiet: true,</span><br><span class="line">  // 如果出错了，不要全屏提示~</span><br><span class="line">  overlay: false,</span><br><span class="line">  // 服务器代理 --&gt; 解决开发环境跨域问题</span><br><span class="line">  proxy: &#123;</span><br><span class="line">    // 一旦devServer(5000)服务器接受到 /api/xxx 的请求，就会把请求转发到另外一个服务器(3000)</span><br><span class="line">    &#x27;/api&#x27;: &#123;</span><br><span class="line">      target: &#x27;http://localhost:3000&#x27;,</span><br><span class="line">      // 发送请求时，请求路径重写：将 /api/xxx --&gt; /xxx （去掉/api）</span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        &#x27;^/api&#x27;: &#x27;&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="optimization"   >
+          <a href="#optimization" class="heading-link"><i class="fas fa-link"></i></a><a href="#optimization" class="headerlink" title="optimization"></a>optimization</h3>
+        <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"> optimization: &#123;</span><br><span class="line">  splitChunks: &#123;</span><br><span class="line">    chunks: &#x27;all&#x27;</span><br><span class="line">    // 默认值，可以不写~</span><br><span class="line">    /* minSize: 30 * 1024, // 分割的chunk最小为30kb</span><br><span class="line">    maxSiza: 0, // 最大没有限制</span><br><span class="line">    minChunks: 1, // 要提取的chunk最少被引用1次</span><br><span class="line">    maxAsyncRequests: 5, // 按需加载时并行加载的文件的最大数量</span><br><span class="line">    maxInitialRequests: 3, // 入口js文件最大并行请求数量</span><br><span class="line">    automaticNameDelimiter: &#x27;~&#x27;, // 名称连接符</span><br><span class="line">    name: true, // 可以使用命名规则</span><br><span class="line">    cacheGroups: &#123;</span><br><span class="line">      // 分割chunk的组</span><br><span class="line">      // node_modules文件会被打包到 vendors 组的chunk中。--&gt; vendors~xxx.js</span><br><span class="line">      // 满足上面的公共规则，如：大小超过30kb，至少被引用一次。</span><br><span class="line">      vendors: &#123;</span><br><span class="line">        test: /[\\/]node_modules[\\/]/,</span><br><span class="line">        // 优先级</span><br><span class="line">        priority: -10</span><br><span class="line">      &#125;,</span><br><span class="line">      default: &#123;</span><br><span class="line">        // 要提取的chunk最少被引用2次</span><br><span class="line">        minChunks: 2,</span><br><span class="line">        // 优先级</span><br><span class="line">        priority: -20,</span><br><span class="line">        // 如果当前要打包的模块，和之前已经被提取的模块是同一个，就会复用，而不是重新打包模块</span><br><span class="line">        reuseExistingChunk: true</span><br><span class="line">      &#125; </span><br><span class="line">    &#125;*/</span><br><span class="line">  &#125;,</span><br><span class="line">  // 将当前模块的记录其他模块的hash单独打包为一个文件 runtime</span><br><span class="line">  // 解决：修改a文件导致b文件的contenthash变化</span><br><span class="line">  runtimeChunk: &#123;</span><br><span class="line">    name: entrypoint =&gt; `runtime-$&#123;entrypoint.name&#125;`</span><br><span class="line">  &#125;,</span><br><span class="line">  minimizer: [</span><br><span class="line">    // 配置生产环境的压缩方案：js和css</span><br><span class="line">    new TerserWebpackPlugin(&#123;</span><br><span class="line">      // 开启缓存</span><br><span class="line">      cache: true,</span><br><span class="line">      // 开启多进程打包</span><br><span class="line">      parallel: true,</span><br><span class="line">      // 启动source-map</span><br><span class="line">      sourceMap: true</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/10/03/hello-world/">Hello World</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-10-03</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-10-03</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>Welcome to <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
+
+        <h2 id="Quick-Start"   >
+          <a href="#Quick-Start" class="heading-link"><i class="fas fa-link"></i></a><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+      
+        <h3 id="Create-a-new-post"   >
+          <a href="#Create-a-new-post" class="heading-link"><i class="fas fa-link"></i></a><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Run-server"   >
+          <a href="#Run-server" class="heading-link"><i class="fas fa-link"></i></a><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Generate-static-files"   >
+          <a href="#Generate-static-files" class="heading-link"><i class="fas fa-link"></i></a><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Deploy-to-remote-sites"   >
+          <a href="#Deploy-to-remote-sites" class="heading-link"><i class="fas fa-link"></i></a><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://p3-passport.byteacctimg.com/img/user-avatar/b7f743a0a08277f13eca3b9b66e9e082~300x300.image" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/yfengn" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://juejin.cn/user/651370288134456" target="_blank" rel="noopener" data-popover="social.juejin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">掘</span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/qq_45503196?spm=1000.2115.3001.5343" target="_blank" rel="noopener" data-popover="social.csdn" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">CSDN</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">20</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Ji Feng</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (false) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'http://www.baixiu.online/page/2/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script data-pjax="">function loadUtterances() {
+  var d = document, s = d.createElement('script');
+  var container = d.getElementById('utterances-container');
+
+  if (!container) {
+    return;
+  }
+  s.src = 'https://utteranc.es/client.js';
+  s.setAttribute('repo', 'yfengn/yfengn.github.io');
+  s.setAttribute('issue-term', 'title');
+  s.setAttribute('label', 'utterances');
+  s.setAttribute('theme', 'github-light');
+  s.setAttribute('crossorigin', 'anonymous');
+  s.setAttribute('async', '');
+  if (true) {
+    s.setAttribute('data-pjax-rm', '');
+  }
+  container.append(s);
+}
+
+if (true) {
+  loadUtterances();
+} else {
+  window.addEventListener('DOMContentLoaded', loadUtterances, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
