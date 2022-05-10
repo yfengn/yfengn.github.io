@@ -28,7 +28,161 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">陈积锋的博客</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/webpack%E9%85%8D%E7%BD%AE/">webpack配置</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在平时的开发中总结了一些比较常用的配置信息，分享给有需要的小伙伴，同时也是给自己的一份webpack配置笔记。</p>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">陈积锋的博客</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/20/git%E4%B8%AD%E5%87%BA%E7%8E%B0Could%20not%20resolve%20hostname%20github%20Name%20or%20service%20not%20known%E9%97%AE%E9%A2%98/">git中出现Could not resolve hostname github Name or service not known问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在准备使用git pull命令从远程仓库中拉取代码或本地写好代码准备使用git push命令推送代码至远程仓库时可能会突然出现这个问题<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/09b4019326974389b40b31e7590c6707~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p>碰到这种问题时本人总结出几种解决方案供大家参考</p>
+<p>解决方案一</p>
+<blockquote>
+<p>登录Github，把原来的密钥删除，重新生成一个</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2b0bc6a49bd43178e8072824bec3892~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p> 解决方案二</p>
+<blockquote>
+<p>将本地的git用户名删除</p>
+<p>删除了以后重新使用git命令时就会要求你登录</p>
+<p><code>git config --system --unset credential.helper</code></p>
+</blockquote>
+<p>解决方案三</p>
+<blockquote>
+<p>进入控制面板在windows凭证管理中找到你远程仓库地址下对应的域名对它进行编辑账号密码(如果找不到可以新建一条)</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5fe4cb53b2404b02a86c644ff1c8a190~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p>解决方案四</p>
+<blockquote>
+<p>可能是因为系统中存在多个用户账号导致错误，可以尝试为当前项目重新配置用户账号</p>
+<p>git config –local user.name ‘xxx’</p>
+</blockquote>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/20/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83%E7%9A%84%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97%E5%92%8C%E5%88%86%E6%94%AF/">如何编写规范的提交日志和分支</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>Git 是目前非常流行的源代码管理工具。为了保持代码提交记录以及 git 分支结构清晰，方便后续维护，我们应该如何制定规范呢？</p>
+
+        <h2 id="1、git-分支命名规范"   >
+          <a href="#1、git-分支命名规范" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、git-分支命名规范" class="headerlink" title="1、git 分支命名规范"></a><strong>1、git 分支命名规范</strong></h2>
+      <p>git 分支主要包括：</p>
+<ol>
+<li><strong>主分支master</strong>：用于发布重大版本更新</li>
+<li><strong>开发主分支develop</strong>：日常开发在此分支进行，所有新功能都要以这个分支来创建自己的开发分支，该分支只做合并操作，不能直接在该分支上开发</li>
+<li><strong>临时性分支</strong>：用于应对一些特定的版本开发（验证没有问题后，应该删除此分支）。在日常开发为了能让团队成员清晰明了知道你这个分支做了什么，在创建分支时尽量带上以下前缀，有了前缀后面再加上你具体做了什么。</li>
+</ol>
+<blockquote>
+<ul>
+<li>feat-xxx：新增功能</li>
+<li>fix-xxx ：修补bug</li>
+<li>docs-xxx：仅修改了文档</li>
+<li>style-xxx：修改样式，不改变代码逻辑</li>
+<li>chore-xxx：不太重要的修改，比如代码风格、改变构建流程</li>
+<li>test-xxx：添加测试</li>
+</ul>
+</blockquote>
+<p>例如我要增加一个收藏商品的功能可以这样命名：feat-collect-goods</p>
+<p>注意事项：</p>
+<ul>
+<li>一个分支尽量开发一个功能模块，不要多个功能模块在一个分支上开发。</li>
+<li>分支在申请合并之前，最好是先 pull 一下 develop 主分支下来，看一下有没有冲突，如果有就先解决冲突后再申请合并。</li>
+</ul>
+
+        <h2 id="2、Commit-message-的格式"   >
+          <a href="#2、Commit-message-的格式" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、Commit-message-的格式" class="headerlink" title="2、Commit message 的格式"></a>2、Commit message 的格式</h2>
+      <p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。</p>
+<blockquote>
+<p>&lt;type&gt;(&lt;scope&gt;):&lt;subject&gt;</p>
+<p>&#x2F;&#x2F; 空一行</p>
+<p>&lt;body&gt;</p>
+<p>&#x2F;&#x2F; 空一行</p>
+<p>&lt;footer&gt;</p>
+</blockquote>
+<p>其中，Header 是必需的，Body 和 Footer 可以省略。</p>
+
+        <h3 id="2-1-Header"   >
+          <a href="#2-1-Header" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-1-Header" class="headerlink" title="2.1 Header"></a>2.1 Header</h3>
+      <p>Header部分只有一行，包括三个字段：**<code>type</code><strong>（必需）、</strong><code>scope</code>**（可选）和<code>subject</code>（必需）。</p>
+<p><strong>（1）type</strong></p>
+<p><code>type</code>用于说明 commit 的类别，与分支命名前缀应该保持一致，也是以下几种标识。</p>
+<blockquote>
+<ul>
+<li>feat：新增功能</li>
+<li>fix：修复bug</li>
+<li>docs：修改了文档</li>
+<li>style：修改了样式，不改变代码逻辑</li>
+<li>chore：不太重要的修改，比如代码风格、改变构建流程</li>
+<li>test：添加测试</li>
+</ul>
+</blockquote>
+<p><strong>（2）scope</strong></p>
+<p><code>scope</code>用于说明 commit 影响的范围，范围可以是指定提交更改位置的任何内容。</p>
+<p><strong>（3）subject</strong></p>
+<p><code>subject</code>是 commit 目的的简短描述，不超过50个字符。</p>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如<code>change</code>，而不是<code>changed</code>或<code>changes</code></li>
+<li>第一个字母小写</li>
+<li>结尾不加句号（<code>.</code>）</li>
+<li>如果没有更合适的描述，可以直接写提交内容</li>
+</ul>
+
+        <h3 id="2-2-Body"   >
+          <a href="#2-2-Body" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-2-Body" class="headerlink" title="2.2 Body"></a>2.2 Body</h3>
+      <p>Body 部分是对本次 commit 的详细描述，应该说明代码变动的动机，以及与以前行为的对比。</p>
+<p>可以分成多行。一般重大需求更新需要把添加body说明。</p>
+
+        <h3 id="2-3-Footer"   >
+          <a href="#2-3-Footer" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-3-Footer" class="headerlink" title="2.3 Footer"></a>2.3 Footer</h3>
+      <p>指明影响的问题，一般是一个issure或需求文档。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/web%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8D%95%E4%BD%8D/">web开发中常见的几种单位</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
+<li> rem：相对于根元素而言，1rem等于根元素的font-size，一般浏览器的默认字体大小为16px</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html&#123;</span><br><span class="line">  font-size: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">  width: 20rem;</span><br><span class="line">  height: 20rem;</span><br><span class="line">  background-color: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>比如我们按照以上设置样式，可以看到如下效果</p>
+<p> 类名为box的元素宽度和高度为400px了。</p>
+<ul>
+<li>px：像素px是相对于显示器分辨率而言，不会随着可视窗口的改变而改变，属于绝对单位。</li>
+<li>em：相对于父级元素的font-size而确定具体大小，如果我们编写以下css代码</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">  font-size: 20px;</span><br><span class="line">&#125;</span><br><span class="line">.children&#123;</span><br><span class="line">  width: 20em;</span><br><span class="line">  height: 20em;</span><br><span class="line">  background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>此时对应的页面效果如下，可以看出带有children类名的蓝色盒子的宽度和高度都为父级字体大小的20倍了。</p>
+<ul>
+<li>rpx：微信小程序中的相对单位，解决屏幕自适应的尺寸问题。</li>
+</ul>
+<p>以 iPhone6 为例，iPhone6 的屏幕宽度为 375px ，共有 750 个物理像素，则 750rpx &#x3D; 375px &#x3D; 750 物理像素。所以在微信小程序开发中推荐按750px出设计图，此时1rpx&#x3D;1px；</p>
+<ul>
+<li>vh：相对于视窗的高度计算大小，视窗高度为100vh;</li>
+</ul>
+<p>计算方式：比如视窗高度为100px时，1vh就为 （1 * 100）&#x2F; 100 &#x3D; 1px</p>
+<ul>
+<li>vw：相对于视窗的宽度计算大小，视窗高度为100vw;</li>
+</ul>
+<p>计算方式：同vh</p>
+<p>如有不足之处，还请大家多多指正。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/React%E8%84%9A%E6%89%8B%E6%9E%B6%20npm%20start%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99/">React脚手架 npm start运行报错</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p><strong>create-react-app创建应用后使用npm start报错</strong></p>
+<p>npm ERR! code ELIFECYCLE<br>npm ERR! errno 1<br>npm ERR! <span class="exturl"><a class="exturl__link"   href="mailto:&#x64;&#x65;&#109;&#x6f;&#49;&#x40;&#x30;&#46;&#x31;&#x2e;&#48;" >&#x64;&#x65;&#109;&#x6f;&#49;&#x40;&#x30;&#46;&#x31;&#x2e;&#48;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> start: <code>react-scripts start</code><br>npm ERR! Exit status 1<br>npm ERR!<br>npm ERR! Failed at the <span class="exturl"><a class="exturl__link"   href="mailto:&#x64;&#x65;&#x6d;&#111;&#x31;&#64;&#48;&#46;&#49;&#x2e;&#48;" >&#x64;&#x65;&#x6d;&#111;&#x31;&#64;&#48;&#46;&#49;&#x2e;&#48;</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> start script.<br>npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</p>
+<p>npm ERR! A complete log of this run can be found in:<br>npm ERR!     D:\Program Files\nodejs\node_cache_logs\2021-10-13T12_09_20_406Z-debug.log</p>
+<p><strong>出现上述错误可以尝试在项目目录中创建.env文件，在文件中输入下面一行</strong></p>
+<blockquote>
+<p>skip_preflight_check&#x3D;true</p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7633e322c99540eeabf1a9727e70c4c9~tplv-k3u1fbpfcp-zoom-1.image" >
+      </p>
+<p> 重新运行 npm start</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">正向代理与反向代理</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>- <strong>正向代理</strong><br>先搭建一个属于自己的代理服务器<br>1、用户发送请求到自己的代理服务器<br>2、自己的代理服务器发送请求到服务器<br>3、服务器将数据返回到自己的代理服务器<br>4、自己的代理服务器再将数据返回给用户<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4d74af94bcfe49b599a209987358933b~tplv-k3u1fbpfcp-zoom-1.image"  alt="正向代理">
+      </p>
+<p>正向代理的作用于用途：<br>作用：正向代理隐藏了用户，用户的请求被代理服务器接收代替，到了服务器，服务器并不知道用户是谁。<br>用途：当你用浏览器访问国外的网站时，被block(拒绝)时，你可以在国外搭建一个代理服务器，这样就可以正常访问了（只是举一个列子）<br>- <strong>反向代理</strong><br>1、用户发送请求到服务器（访问的其实是反向代理服务器，但用户不知道）<br>2、反向代理服务器发送请求到真正的服务器<br>3、真正的服务器将数据返回给反向代理服务器<br>4、反向代理服务器再将数据返回给用户<br>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8c3ec05198e43a9b29d3b9531de2e75~tplv-k3u1fbpfcp-zoom-1.image"  alt="这里写图片描述">
+      </p>
+<p>反向代理的作用于用途：<br>作用：用户请求过多，服务器会有一个处理的极限。所以使用反向代理服务器接受请求，再用均衡负载将请求分布给多个真实的服务器。既能提高效率还有一定的安全性。<br>用途：如果不采用代理，用户的IP、端口号直接暴露在Internet（尽管地址转换NAT），外部主机依然可以根据IP、端口号来开采主机安全漏洞，所以在企业网，一般都是采用代理服务器访问互联网。</p>
+<p>正向代理与反向代理最简单的区别：<br><strong>正向代理隐藏的是用户，反向代理隐藏的是服务器</strong></p>
+<p>本篇内容主要素材来自：<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40112630/article/details/80392172" >https://blog.csdn.net/qq_40112630/article/details/80392172</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/11/06/webpack%E9%85%8D%E7%BD%AE/">webpack配置</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-11-06</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>在平时的开发中总结了一些比较常用的配置信息，分享给有需要的小伙伴，同时也是给自己的一份webpack配置笔记。</p>
 
         <h3 id="大体配置"   >
           <a href="#大体配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#大体配置" class="headerlink" title="大体配置"></a>大体配置</h3>
@@ -89,7 +243,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></he
       <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
 
 <p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://p3-passport.byteacctimg.com/img/user-avatar/b7f743a0a08277f13eca3b9b66e9e082~300x300.image" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/yfengn" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://juejin.cn/user/651370288134456" target="_blank" rel="noopener" data-popover="social.juejin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">掘</span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/qq_45503196?spm=1000.2115.3001.5343" target="_blank" rel="noopener" data-popover="social.csdn" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">CSDN</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Ji Feng</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://p3-passport.byteacctimg.com/img/user-avatar/b7f743a0a08277f13eca3b9b66e9e082~300x300.image" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/yfengn" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://juejin.cn/user/651370288134456" target="_blank" rel="noopener" data-popover="social.juejin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">掘</span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/qq_45503196?spm=1000.2115.3001.5343" target="_blank" rel="noopener" data-popover="social.csdn" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">CSDN</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Ji Feng</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="0,0,0" opacity="0.6" count="99" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
